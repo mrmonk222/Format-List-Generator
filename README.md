@@ -1,4 +1,4 @@
-# Repository: Format List
+# WP Format List Generator
 
 This canvas contains the files ready to copy-paste into a GitHub repo. Files included below are separated by headings — copy each into the appropriately named file in your repository.
 
@@ -25,7 +25,7 @@ www.site.com/wp-login.php#user@pass
 ## README.md
 
 ````markdown
-# wp-login-converter
+# WP Format List Converter
 
 A small, dependency-free Python 3 script to convert `site -> user:pass` lines into `site/wp-login.php#user@pass` lines. Useful for transforming bruteforce success lists into clickable targets or for quick text processing.
 
@@ -45,20 +45,20 @@ Clone the repo and use the script directly:
 
 ```bash
 git clone <your-repo-url>
-cd wp-login-converter
-python3 to_wplogin.py -i input.txt -o output.txt
+cd WP Format List Converter
+python3 main.py -i input.txt -o output.txt
 ````
 
 Or run via a pipe:
 
 ```bash
-cat input.txt | python3 to_wplogin.py > output.txt
+cat input.txt | python3 main.py > output.txt
 ```
 
 ## Usage
 
 ```text
-usage: to_wplogin.py [-h] [-i INPUT] [-o OUTPUT] [-s SEPARATOR]
+usage: main.py [-h] [-i INPUT] [-o OUTPUT] [-s SEPARATOR]
 
 Convert site -> user:pass into site/wp-login.php#user@pass
 
@@ -77,19 +77,19 @@ optional arguments:
 From file to file:
 
 ```bash
-python3 to_wplogin.py -i input.txt -o output.txt
+python3 main.py -i input.txt -o output.txt
 ```
 
 From stdin to stdout:
 
 ```bash
-cat input.txt | python3 to_wplogin.py > output.txt
+cat input.txt | python3 main.py > output.txt
 ```
 
 Change separator (if your file uses a different token):
 
 ```bash
-python3 to_wplogin.py -s ":" -i input.txt -o output.txt
+python3 main.py -s ":" -i input.txt -o output.txt
 ```
 
 ## Contributing
